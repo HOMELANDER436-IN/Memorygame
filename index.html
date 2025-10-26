@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>🎴 Memory Duel</h1>
+      <div class="scoreboard">
+        <div id="player1" class="player active">Player 1 🔵 <span id="score1">0</span></div>
+        <div id="player2" class="player">Player 2 🔴 <span id="score2">0</span></div>
+      </div>
+    </header>
+
+    <main id="grid" class="grid"></main>
+
+    <button id="restart">🔁 Restart Game</button>
+  </div>
+
+  <audio id="flipSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_9f63e7764f.mp3"></audio>
+  <audio id="matchSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_c6f0a0c41d.mp3"></audio>
+  <audio id="winSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f82f64d8e.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

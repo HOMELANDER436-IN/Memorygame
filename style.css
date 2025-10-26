@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #001f3f, #001020);
+  color: #fff;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 440px;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.player {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.player.active {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px rgba(0,200,255,0.7);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  width: 100%;
+  flex-grow: 1;
+  justify-items: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  perspective: 800px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  background: linear-gradient(145deg, #0066ff, #00ccff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  border: 2px solid #fff;
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(255,255,255,0.2);
+}
+
+#restart {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: #00e0ff;
+  color: #001;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,255,255,0.6);
+  transition: 0.3s;
+}
+
+#restart:hover {
+  background: #00faff;
+  transform: scale(1.05);
+}
